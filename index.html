@@ -27,8 +27,9 @@
       video.src = "San_video.mp4";
       video.crossOrigin = "anonymous";
       video.loop = true;
-      video.muted = false;
-      video.playsInline = true;
+      video.muted = true; // ✅ Important for autoplay
+      video.playsInline = true; // ✅ Prevent full-screen on iPhone
+      video.autoplay = true;
 
       const texture = new THREE.VideoTexture(video);
       const geometry = new THREE.PlaneGeometry(1, 0.5625); // match video aspect ratio
